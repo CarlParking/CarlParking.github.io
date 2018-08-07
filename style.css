@@ -1,20 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
 body {
 	background: white url(images/bg3.jpg) repeat fixed center;
 	background-size: 100%;
 	padding: 0;
-	margin: 0;
 	font-family: "Roboto", sans-serif;
 }
 
+a {
+	color: #f24344;
+	cursor: pointer;
+	text-decoration: none;
+}
+
 #logo {
-	background: #ffffcc url(images/header.png) no-repeat fixed 0 35px;
+	background: #ffffcc url(images/header.png) no-repeat fixed 0 5%;
 	background-size: 600px;
 	width: 600px;
 	height: 200px;
 	position: fixed;
-	top: 30px;
+	top: 3%;
 	border-radius: 0 40px 40px 0;
 	z-index: 2;
 	border: 1px solid black;
@@ -28,8 +39,128 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 100%;
 	min-height:100%;
 	z-index: 1;
+}
+
+#content {
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	background: rgba(255,255,204,.9);
+	margin-bottom: 0;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.footer, #content .upper_right, #content .main, .footer a {
+	position: fixed;
+}
+.footer {
+	bottom: 0;
+	width: inherit;
+	height: 20%;
+	min-height: 150px;
+	z-index: 1;
+	background: url(images/footer.png) no-repeat fixed bottom center;
+}
+
+.footer a {
+	bottom: 0;
+	right: 5%;
+	padding: 1% 2%;
+	font-size: 34px;
+	background: transparent;
+	font-weight: 100;
+}
+
+.footer a:hover {
+	font-weight: 600;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.hidden {
+	visibility: hidden;
+	display: none;
+}
+
+#content td {
+	padding: 15px 15px;
+	vertical-align: center;
+}
+
+td img {
+	width: auto;
+	height: 20px;
+}
+
+#content .upper_right {
+	top: 0;
+	right: 5%;
+	width: 46%;
+	height: 30%;
+	padding: 0%;
+}
+
+#content .upper_right * {
+	font-size: 30px;
+}
+
+#content .upper_right table {
+	height: 100%;
+	width: 100%;
+}
+
+#content .main {
+	top: 30%;
+	height: 50%;
+	z-index: 3;
+	width: inherit;
+	/*
+	background: -moz-linear-gradient(left, rgba(255,255,204,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,204,0) 100%);
+	background: -webkit-linear-gradient(left, rgba(255,255,204,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,204,0) 100%);
+	background: linear-gradient(to right, rgba(255,255,204,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,204,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffcc', endColorstr='#00ffffcc',GradientType=1 );
+	*/
+}
+
+#request {
+	margin-top: 2%;
+	outline: 0;
+	cursor: pointer;
+	padding: 15px;
+	font-size: 14px;
+	transition: all .3s ease;
+	font-style: italic;
+	background: #ffffff;
+	padding: 20px;
+	font-weight: bold;
+	border-radius: 6px;
+	display: inline-block;
+	background: rgba(255,255,204) url(images/pay.png) no-repeat 5px center;
+	background-size: 48px;
+	padding-left: 68px;
+	border-width: 2px;
+	border-style: outset;
+	border-color: rgb(255,220,160);
+}
+
+#request:hover, #request:active, #request:focus {
+	background-color: rgb(255,230,190);
+}
+
+#request:active, #request:focus {
+	border-color: #fff;
+}
+
+#request:active {
+	box-shadow: inset 0 0 5px 0 black;
 }
 
 .login-page {
@@ -42,12 +173,18 @@ body {
 	margin-top: -150px;
 }
 
+/*******
+	HTML and CSS concerning login-form, register-form and all child nodes is courtesy of ColorLib.
+	https://colorlib.com/wp/template/creative-login-form/, accessed 2018-08-07
+	Changes were applied.
+******/
+
 .form {
 	position: relative;
 	z-index: 1;
 	background: #FFFFFF;
 	max-width: 360px;
-	margin: 0 auto 100px;
+	margin: 0 auto;
 	padding: 45px;
 	text-align: center;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -96,11 +233,6 @@ body {
 	font-size: 12px;
 }
 
-.form .message a {
-	color: #f24344;
-	text-decoration: none;
-}
-
 .container {
 	position: relative;
 	z-index: 1;
@@ -138,4 +270,14 @@ body {
 
 .container .info span .fa {
 	color: #EF3B3A;
+}
+
+::selection {
+	background: #f24344;
+	color: rgb(220,220,220);
+}
+
+::-moz-selection {
+    background: #f24344;
+	color: rgb(220,220,220);
 }

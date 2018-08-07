@@ -3,38 +3,94 @@
 <html>
 
 	<head>
-		<title>Carl</title>
+		<title>Carl Parking</title>
 		
-		<link rel="icon" href="images/logo.ico">
+		<link rel="icon" href="images/favicon.ico">
 		<link rel="stylesheet" href="style.css">
-		
-	
 	</head>
 	
-	<body>
+	<!-- onload is calle pretty late, place for improvement -->
+	<body onload="findPage()">
 	
 		<div id="logo"></div>
 		
 		<div id="body">
 		
-		<div class="login-page">
-		
-		  <div class="form">
+			<div id="content">
+			
+				<div class="upper_right">
+					<table>
+						<tr valign="bottom">
+							<td>Your parking time:</td>
+							<td id="ParkingTime" class="bold">31:12 Minutes</td>
+						</tr>
+						
+						<tr valign="top">
+							<td>Your parking costs:</td>
+							<td id="ParkingCosts" class="bold">0,0023 <img src="images/ether.png" /></td>
+						</tr>
+					</table>
+				</div>
 				
-			<form class="login-form">
-					  <input type="text" placeholder="username"/>
-					  <input type="password" placeholder="password"/>
-					  <button>login</button>
-					  <p class="message">Not registered? <a href="register.html">Create an account</a></p>
-				</form>
+				<div class="main">
+					<center>
+						<table>
+							<tr>
+								<td>Username:</td>
+								<td id="Username">Wait...</td>
+							</tr>
+							
+							<tr>
+								<td>License Plate:</td>
+								<td id="LicensePlate">Wait...</td>
+							</tr>
+							
+							
+							<tr>
+								<td><br /></td>
+							</tr>
+							
+							
+							<tr>
+								<td>Car Park Name:</td>
+								<td id="CarparkName">Wait...</td>
+							</tr>
+							
+							<tr>
+								<td>Car Park Address:</td>
+								<td id="CarparkAddress">Wait...</td>
+							</tr>
+							
+						</table>
+					
+					
+						<button id="request">Pay &amp; Request Car</button>
+					
+					</center>
+				</div>
 				
-		  </div>
+				
+				
+				<div class="footer">
+
+					<a id="logout" href="login.html" onclick="logOut()">Log Out</a>
+				</div>
+			
+			</div>
 		  
 		</div>
 		
 		
 		
 		</div>
+		
+		<script src="functions.js"> </script>
+		<script>
+		//check if a user is logged in or not (in that case switch to login screen)
+		//window.onLoad(findPage());
+		
+		checkUser();
+		</script>
 	</body>
 
 

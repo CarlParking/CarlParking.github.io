@@ -3,11 +3,12 @@
 <html>
 
 	<head>
-		<title>Carl Registration</title>
+		<title>Carl Parking: Registration</title>
 		
-		<link rel="icon" href="images/logo.ico">
+		<link rel="icon" href="images/favicon.ico">
 		<link rel="stylesheet" href="style.css">
 		
+		<script src="functions.js"></script>
 	
 	</head>
 	
@@ -17,16 +18,29 @@
 		
 		<div id="body">
 		
-		<div class="login-page">
+		<div id="page" class="login-page">
 		
 		  <div class="form">
 		  
+				<!--
+				HTML and CSS concerning login-form, register-form and all child nodes is courtesy of ColorLib.
+				https://colorlib.com/wp/template/creative-login-form/, accessed 2018-08-07
+				Changes were applied.
+				-->
+		  
 				<form class="register-form">
-					  <input type="text" placeholder="username"/>
-					  <input type="password" placeholder="password"/>
-					  <input type="text" placeholder="license plate"/>
-					  <button>create</button>
-					  <p class="message">Already registered? <a href="login.html">Sign In</a></p>
+						
+						<input type="text" placeholder="username"/>
+						<input type="password" placeholder="password"/>
+						
+						
+						<div id="lps">
+							<input type="text" id="lp1" onchange="addInput(this,1)" placeholder="license plate #1"/>
+						</div>
+						
+						<button type="reset" id="register" onclick="registerUser()">Register</button>
+						<p class="message">Already registered? <a href="login.html">Sign In</a></p>
+						
 				</form>
 		
 				
